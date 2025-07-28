@@ -117,3 +117,33 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* Enhanced animations for drone/tech theme */
+@keyframes drift {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  25% { transform: translateX(10px) translateY(-5px); }
+  50% { transform: translateX(-5px) translateY(-10px); }
+  75% { transform: translateX(-10px) translateY(5px); }
+}
+
+@keyframes hover-lift {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-8px) scale(1.02); }
+}
+
+@keyframes data-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+.animate-drift {
+  animation: drift 8s ease-in-out infinite;
+}
+
+.animate-hover-lift {
+  animation: hover-lift 4s ease-in-out infinite;
+}
+
+.animate-data-pulse {
+  animation: data-pulse 3s ease-in-out infinite;
+}

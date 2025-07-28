@@ -73,9 +73,11 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Floating elements */}
-      <div className="absolute top-1/4 right-1/4 w-20 h-20 bg-accent/20 rounded-full blur-xl animate-float"></div>
-      <div className="absolute bottom-1/3 left-1/4 w-16 h-16 bg-secondary/20 rounded-full blur-xl animate-float" style={{animationDelay: "2s"}}></div>
+      {/* Floating elements - drone-like animations */}
+      <div className="absolute top-1/4 right-1/4 w-20 h-20 bg-accent/20 rounded-full blur-xl animate-drift"></div>
+      <div className="absolute bottom-1/3 left-1/4 w-16 h-16 bg-secondary/20 rounded-full blur-xl animate-hover-lift" style={{animationDelay: "2s"}}></div>
+      <div className="absolute top-1/2 left-1/6 w-12 h-12 bg-primary/20 rounded-full blur-lg animate-data-pulse" style={{animationDelay: "4s"}}></div>
+      <div className="absolute bottom-1/4 right-1/6 w-18 h-18 bg-accent/30 rounded-full blur-xl animate-drift" style={{animationDelay: "6s"}}></div>
     </section>
   );
 };
