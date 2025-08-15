@@ -20,6 +20,7 @@ const ConsultationForm = ({ isOpen, onClose, type }: ConsultationFormProps) => {
     phone: "",
     requirements: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const getTitle = () => {
@@ -31,21 +32,50 @@ const ConsultationForm = ({ isOpen, onClose, type }: ConsultationFormProps) => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    toast({
-      title: "Request Submitted",
-      description: `Your ${getTitle().toLowerCase()} request has been submitted successfully. We'll contact you soon.`,
-    });
-    setFormData({
-      username: "",
-      name: "",
-      email: "",
-      phone: "",
-      requirements: ""
-    });
-    onClose();
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('/functions/v1/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          formType: getTitle(),
+          ...formData
+        }),
+      });
+
+      const result = await response.json();
+      
+      if (result.success) {
+        toast({
+          title: "Request Submitted Successfully",
+          description: result.message,
+        });
+        setFormData({
+          username: "",
+          name: "",
+          email: "",
+          phone: "",
+          requirements: ""
+        });
+        onClose();
+      } else {
+        throw new Error(result.error);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Submission Error",
+        description: "There was an issue submitting your form. Please try again or contact us directly at info@twinfinity.tech",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -119,11 +149,11 @@ const ConsultationForm = ({ isOpen, onClose, type }: ConsultationFormProps) => {
             />
           </div>
           <div className="flex gap-3 pt-4">
-            <Button type="button" variant="outline" onClick={onClose} className="flex-1">
+            <Button type="button" variant="outline" onClick={onClose} className="flex-1" disabled={isSubmitting}>
               Cancel
             </Button>
-            <Button type="submit" variant="gradient" className="flex-1">
-              Submit Request
+            <Button type="submit" variant="gradient" className="flex-1" disabled={isSubmitting}>
+              {isSubmitting ? "Submitting..." : "Submit Request"}
             </Button>
           </div>
         </form>
