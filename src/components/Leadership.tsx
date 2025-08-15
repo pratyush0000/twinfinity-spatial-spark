@@ -66,7 +66,7 @@ const Leadership = () => {
                   <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
                     {point.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">
+                  <p className="text-muted-foreground leading-relaxed text-justify group-hover:text-foreground transition-colors duration-300">
                     {point.description}
                   </p>
                 </div>
@@ -81,7 +81,7 @@ const Leadership = () => {
               <h3 className="text-3xl font-bold text-foreground mb-4">
                 Visual Storytelling and Case Studies
               </h3>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-justify">
                 To demonstrate our impact and leadership, we illustrate our journey with compelling 
                 visual elements and real case studies that showcase transformation and innovation.
               </p>

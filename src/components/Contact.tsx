@@ -1,8 +1,14 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import ConsultationForm from "./ConsultationForm";
 
 const Contact = () => {
+  const [consultationOpen, setConsultationOpen] = useState(false);
+  const [demoOpen, setDemoOpen] = useState(false);
+  const [pocOpen, setPocOpen] = useState(false);
+
   return (
     <section id="contact" className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,7 +34,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <div className="font-semibold text-foreground">Email Us</div>
-                  <div className="text-muted-foreground">info@twinfinity-tech.com</div>
+                  <div className="text-muted-foreground">info@twinfinity.tech</div>
                 </div>
               </div>
               
@@ -38,7 +44,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <div className="font-semibold text-foreground">Call Us</div>
-                  <div className="text-muted-foreground">+1 (555) 123-4567</div>
+                  <div className="text-muted-foreground">+91 7838751387</div>
                 </div>
               </div>
               
@@ -54,11 +60,11 @@ const Contact = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="gradient" size="lg" className="group">
-                Start Your Project
+              <Button variant="gradient" size="lg" className="group" onClick={() => setDemoOpen(true)}>
+                Demonstration
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="outline" size="lg">
+              <Button variant="outline" size="lg" onClick={() => setConsultationOpen(true)}>
                 Schedule Consultation
               </Button>
             </div>
@@ -75,31 +81,59 @@ const Contact = () => {
                 </div>
                 
                 <div className="space-y-4">
-                  <div className="p-4 bg-muted/30 rounded-lg">
+                  <Button 
+                    variant="outline" 
+                    className="w-full p-4 h-auto flex flex-col items-start hover:bg-muted/50 transition-colors"
+                    onClick={() => setConsultationOpen(true)}
+                  >
                     <div className="font-medium text-foreground mb-1">Free Consultation</div>
                     <div className="text-sm text-muted-foreground">
                       Discuss your spatial data challenges with our experts
                     </div>
-                  </div>
+                  </Button>
                   
-                  <div className="p-4 bg-muted/30 rounded-lg">
+                  <Button 
+                    variant="outline" 
+                    className="w-full p-4 h-auto flex flex-col items-start hover:bg-muted/50 transition-colors"
+                    onClick={() => setDemoOpen(true)}
+                  >
                     <div className="font-medium text-foreground mb-1">Custom Demo</div>
                     <div className="text-sm text-muted-foreground">
                       See our solutions in action with your specific use case
                     </div>
-                  </div>
+                  </Button>
                   
-                  <div className="p-4 bg-muted/30 rounded-lg">
+                  <Button 
+                    variant="outline" 
+                    className="w-full p-4 h-auto flex flex-col items-start hover:bg-muted/50 transition-colors"
+                    onClick={() => setPocOpen(true)}
+                  >
                     <div className="font-medium text-foreground mb-1">Proof of Concept</div>
                     <div className="text-sm text-muted-foreground">
                       Test our technology with a small-scale pilot project
                     </div>
-                  </div>
+                  </Button>
                 </div>
               </div>
             </Card>
           </div>
         </div>
+        
+        <ConsultationForm 
+          isOpen={consultationOpen} 
+          onClose={() => setConsultationOpen(false)} 
+          type="consultation" 
+        />
+        <ConsultationForm 
+          isOpen={demoOpen} 
+          onClose={() => setDemoOpen(false)} 
+          type="demo" 
+        />
+        <ConsultationForm 
+          isOpen={pocOpen} 
+          onClose={() => setPocOpen(false)} 
+          type="poc" 
+        />
       </div>
     </section>
   );

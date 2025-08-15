@@ -9,9 +9,19 @@ const Navigation = () => {
     <nav className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
-            <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              Twinfinity Technologies
+          <div className="flex items-center space-x-3">
+            <img 
+              src="/lovable-uploads/a94170c3-9147-4c15-818d-d76d7ff50ec6.png" 
+              alt="Twinfinity Technologies Logo"
+              className="h-10 w-10"
+            />
+            <div className="flex flex-col">
+              <div className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent leading-tight">
+                Twinfinity Technologies
+              </div>
+              <div className="text-xs text-muted-foreground leading-tight">
+                Pvt Ltd
+              </div>
             </div>
           </div>
           

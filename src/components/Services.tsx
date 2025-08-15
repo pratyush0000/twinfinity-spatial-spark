@@ -14,10 +14,10 @@ const Services = () => {
       features: ["Custom GIS Applications", "Satellite Data Analysis", "Environmental Monitoring", "Digital Platform Development"]
     },
     {
-      title: "LiDAR & Drone Mapping Solutions", 
-      description: "High-precision aerial mapping and surveying using cutting-edge LiDAR and drone technologies for comprehensive spatial data acquisition.",
+      title: "Sensors & Data Capture", 
+      description: "Advanced sensors and platforms for comprehensive data capture including drones, LiDAR systems, and 360° cameras.",
       icon: lidarIcon,
-      features: ["Aerial Surveying", "Topographic Mapping", "Infrastructure Inspection", "Precision Agriculture"]
+      features: ["Oblique Sensors", "High Endurance Drones", "LiDAR Systems", "360° Cameras"]
     },
     {
       title: "3D Modeling & Photogrammetry",

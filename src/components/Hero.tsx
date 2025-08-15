@@ -37,7 +37,7 @@ const Hero = () => {
                 Explore Solutions
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="outline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+              <Button variant="secondary" size="lg" className="text-secondary-foreground">
                 Learn More
               </Button>
             </div>

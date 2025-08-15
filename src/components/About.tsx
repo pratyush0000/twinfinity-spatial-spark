@@ -27,7 +27,7 @@ const About = () => {
               <h2 className="text-4xl font-bold text-foreground mb-6">
                 Who <span className="bg-gradient-secondary bg-clip-text text-transparent">We Are</span>
               </h2>
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <div className="space-y-4 text-muted-foreground leading-relaxed text-justify">
                 <p>
                   Twinfinity Technologies is a next-generation geospatial solutions company driven by innovation, 
                   technology, and a deep commitment to transforming how spatial data is used in the real world. 
@@ -53,7 +53,7 @@ const About = () => {
             <div className="space-y-6">
               <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10 rounded-2xl p-6 border border-border/30">
                 <h3 className="text-2xl font-semibold text-foreground mb-4">Our Mission</h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed text-justify">
                   To empower organizations and communities through cutting-edge geospatial technologies, 
                   transforming data into decisions for a sustainable, resilient, and connected world. 
                   We are dedicated to delivering digital solutions that not only solve today's challenges 
@@ -76,24 +76,24 @@ const About = () => {
           </div>
           
           <div className="space-y-8 animate-fade-in" style={{animationDelay: "0.3s"}}>
-            <div className="grid grid-cols-2 gap-6">
-              {stats.map((stat, index) => (
-                <Card key={index} className="group p-6 text-center bg-gradient-card border-border/50 hover:shadow-soft transition-all duration-300 hover:scale-105 hover:-translate-y-1">
-                  <div className="flex justify-center mb-3">
-                    <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <stat.icon className="h-6 w-6 text-primary-foreground" />
-                    </div>
-                  </div>
-                  <div className="text-2xl font-bold text-foreground mb-1 group-hover:text-primary transition-colors">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
-                </Card>
-              ))}
+            <div className="flex justify-center">
+              <Card className="group p-8 bg-gradient-card border-border/50 hover:shadow-large transition-all duration-300 hover:scale-105 max-w-md">
+                <div className="text-center">
+                  <img 
+                    src="/lovable-uploads/a94170c3-9147-4c15-818d-d76d7ff50ec6.png" 
+                    alt="Twinfinity Technologies Logo"
+                    className="mx-auto mb-4 w-32 h-auto group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <h3 className="text-xl font-semibold text-foreground mb-2">Twinfinity Technologies</h3>
+                  <p className="text-muted-foreground">Connecting the Virtual World</p>
+                </div>
+              </Card>
             </div>
             
             <Card className="p-8 bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5 border-border/50 hover:shadow-medium transition-all duration-300">
               <div className="text-center space-y-4">
                 <h3 className="text-xl font-semibold text-foreground">Impact & Excellence</h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed text-justify">
                   Our portfolio includes impactful collaborations with stakeholders in infrastructure, 
                   land management, agriculture, and environment. Our solutions have resulted in tangible, 
                   measurable improvements—such as improved data accuracy, faster decision cycles, and cost efficiencies.
