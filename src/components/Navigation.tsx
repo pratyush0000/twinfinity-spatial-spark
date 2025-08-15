@@ -13,7 +13,7 @@ const Navigation = () => {
             <img 
               src="/lovable-uploads/a94170c3-9147-4c15-818d-d76d7ff50ec6.png" 
               alt="Twinfinity Technologies Logo"
-              className="h-10 w-10"
+              className="h-12 w-12 rounded-lg object-contain bg-white/10 p-1"
             />
             <div className="flex flex-col">
               <div className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent leading-tight">
